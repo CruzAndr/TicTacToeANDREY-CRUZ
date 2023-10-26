@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Tic Tac Toe">
+  <ClassDiagramComponents>
+    <Class name="Player" package="" visibility="public" xPosition="535.0" yPosition="504.0">
+      <Fields>
+        <Field name="playerScore" type="int" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="IA" package="" visibility="public" xPosition="159.0" yPosition="281.0">
+      <Fields>
+        <Field name="iaLevel" type="String" visibility="private"/>
+        <Field name="iaSymbol" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="TicTacToe" package="" visibility="public" xPosition="170.0" yPosition="42.0">
+      <Fields>
+        <Field name="gameStatus" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="GameMode" package="" visibility="public" xPosition="494.0" yPosition="253.0">
+      <Fields>
+        <Field name="gameMode" type="String" visibility="private"/>
+        <Field name="iaLevel" type="String" visibility="private"/>
+        <Field name="playerSymbol" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Board" package="" visibility="public" xPosition="793.0" yPosition="272.0">
+      <Fields>
+        <Field name="boardGame" type="String" visibility="private"/>
+        <Field name="movements" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="GameLogic" package="" visibility="public" xPosition="560.0" yPosition="20.0">
+      <Fields>
+        <Field name="turnPlay" type="String" visibility="private"/>
+        <Field name="winner" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="BoardGame" source="GameLogic" target="Board" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="UserPlayer" source="GameMode" target="Player" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Gamelogic" source="GameLogic" target="GameMode" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Game" source="TicTacToe" target="GameLogic" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="IAplayer" source="GameMode" target="IA" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <HasRelation name="iaLevel" source="GameMode" target="IA" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
